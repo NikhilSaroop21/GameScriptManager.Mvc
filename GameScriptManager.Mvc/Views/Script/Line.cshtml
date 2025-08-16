@@ -1,0 +1,44 @@
+﻿@model GameScriptManager.Mvc.Models.StoryNode
+@{
+    ViewData["Title"] = "Game Script Manager – Line-by-Line";
+    var index = (int)ViewBag.Index;
+    var count = (int)ViewBag.Count;
+    var prev = index > 0 ? index - 1 : 0;
+    var next = index < count - 1 ? index + 1 : count - 1;
+}
+
+<div class="container py-4">
+    <!-- HERO -->
+    <div class="card card-glass mb-4">
+        <div class="card-body p-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+            <div class="mb-3 mb-md-0">
+                <h1 class="h2 gradient-text mb-1">🛹 Line-by-Line Mode</h1>
+                <div class="text-white-50">Use Next / Previous to cruise the neon sky.</div>
+            </div>
+            <div class="d-flex gap-2">
+                <a class="btn btn-outline-accent" asp-action="Index">Full Story</a>
+                <a class="btn btn-accent" asp-action="Line" asp-route-index="@index">Line-by-Line</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- LINE CARD -->
+    <div class="card card-glass">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <div>
+                    <span class="badge-chip">#@Model.Number</span>
+                    <span class="ms-2 fw-semibold">Zara Log @Model.Number</span>
+                </div>
+                <div class="small text-white-50">@(@index + 1) / @count</div>
+            </div>
+            <p class="fs-5 mb-0 fade-in">🚀 @Model.Text</p>
+        </div>
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="d-flex justify-content-center gap-2 mt-3">
+        <a class="btn btn-outline-accent" asp-action="Line" asp-route-index="@prev">⏮ Previous</a>
+        <a class="btn btn-accent" asp-action="Line" asp-route-index="@next">Next ▶️</a>
+    </div>
+</div>

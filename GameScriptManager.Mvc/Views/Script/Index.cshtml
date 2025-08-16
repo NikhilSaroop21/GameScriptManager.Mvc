@@ -1,0 +1,41 @@
+﻿@model IReadOnlyList<GameScriptManager.Mvc.Models.StoryNode>
+@{
+    ViewData["Title"] = "Game Script Manager – Full Story";
+}
+
+<div class="container py-4">
+    <!-- HERO -->
+    <div class="card card-glass mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                <div class="mb-3 mb-md-0">
+                    <h1 class="h2 mb-1 gradient-text">🌈 Zara the Stardust Courier</h1>
+                    <div class="text-white-50">A neon-sky adventure, sorted by your linked-list magic.</div>
+                </div>
+                <div class="d-flex gap-2">
+                    <a class="btn btn-accent" asp-action="Index">Full Story</a>
+                    <a class="btn btn-outline-accent" asp-action="Line">Line-by-Line</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STORY -->
+    <div class="card card-glass">
+        <div class="card-body p-4">
+            <h5 class="gradient-text mb-3">✨ Full Story (Sorted)</h5>
+            <hr class="hr-fun mb-4" />
+
+            <div class="story-text">
+                @foreach (var n in Model)
+                {
+                    <div class="mb-4">
+                        <span class="badge-chip me-2">#@n.Number</span>
+                        <span class="fw-semibold">Zara Log @n.Number</span>
+                        <p class="mb-0 mt-2">@n.Text</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
