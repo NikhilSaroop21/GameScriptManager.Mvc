@@ -56,19 +56,6 @@ cd GameScriptManager.Mvc
 dotnet run
 
 
-Visit:
-
-Full Story → http://localhost:5000/Script/Index
-
-Line-by-Line → http://localhost:5000/Script/Line
-
-🖼️ Screenshots (add once you run it)
-
-🌈 Full Story mode: All sorted paragraphs in a glowing glass card.
-
-🛹 Line-by-Line mode: Navigate Zara’s sky journey step-by-step.
-
-🎨 Theming
 
 Animated gradient background
 
